@@ -25,10 +25,9 @@ function renderBaner() {
 
   if (
     navigator.userAgent.toLowerCase().includes("edg") ||
-    navigator.userAgent.toLowerCase().includes("edge")
+    navigator.userAgent.toLowerCase().includes("edge") ||
+    navigator.userAgent.toLowerCase().includes("firefox")
   ) {
-    setTimeout(bannerTimeout, 1500);
-  } else if (navigator.userAgent.toLowerCase().includes("firefox")) {
     setTimeout(bannerTimeout, 1500);
   } else if (navigator.userAgent.toLowerCase().includes("chrome")) {
     downloadBanner.classList.add("download-banner--bottom");
@@ -44,7 +43,7 @@ function renderLoader() {
 
 function renderCarts(carts) {
   cartWprapper.innerHTML = ``;
-
+  console.log(carts);
   carts.result.elements.forEach((item) => {
     const {
       amount,
@@ -71,7 +70,7 @@ function renderCarts(carts) {
             </div>
             <p>${amount}</p>
             <span>
-              /per year
+              ${priceKey === "50%" ? "/mo" : "/per year"}
             </span>
             <p class="cart__price-sale ${
               priceKey === "50%" ? "cart__price-sale--active" : ""
