@@ -1,0 +1,33 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0; 
+}
+
+body, html{
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul[role='list'], ol[role='list']{
+  list-style: none; 
+}
+
+img, picture, svg, video, canvas{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+input, button, textarea, select{
+  font: inherit;
+}
